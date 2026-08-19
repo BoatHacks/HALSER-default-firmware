@@ -49,6 +49,7 @@ void run_nmea_gateway() {
                          ->set_hostname("halser")
                          ->set_button_pin(kButtonPin)
                          ->enable_ota("halser")
+                         ->enable_system_info_sensors()
                          ->get_app();
 
   // RGB LED for activity indication

@@ -33,6 +33,13 @@ GPIO 0 is checked at startup:
 - `src/nmea_gateway.h/.cpp` — SensESP application: NMEA 0183 parsing, N2K transmission, WiFi/web UI
 - `src/n2k_senders.h` — N2K message senders with value expiry
 
+### System Health Reporting
+
+`nmea_gateway.cpp` calls `SensESPAppBuilder::enable_system_info_sensors()`,
+which publishes SensESP's built-in system-health sensors to SignalK under
+`sensors.halser.*`: `systemHz` (event loop rate), `freeMemory`, `uptime`,
+`ipAddress`, and `wifiSignalLevel`.
+
 ### Data Flow (Gateway Mode)
 
 ```
